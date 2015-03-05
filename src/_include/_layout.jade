@@ -1,0 +1,16 @@
+block variable
+
+doctype
+html.no-js(lang="#{lang}")
+    include _meta
+
+    body(class="page-#{page}")
+
+        #wrapper
+            include _header
+
+            block content
+
+            include _footer
+        include _script
+

@@ -1,0 +1,75 @@
+/* ==========================================================================
+    Author's styles
+========================================================================== */
+body
+{
+    font: 15px/1.6 Helvetica, Arial, 'Hiragino Kaku Gothic ProN', 'ヒラギノ角ゴ ProN W3', Meiryo, メイリオ, sans-serif;
+
+    color: #333;
+    background-color: #fff;
+    // font: 15px/1.6 'Hiragino Mincho ProN', serif
+
+    -webkit-font-smoothing: antialiased;
+}
+
+a
+{
+    text-decoration: none;
+
+    color: #00f;
+
+    &:hover
+    {
+        text-decoration: underline;
+    }
+}
+
+
+
+// firefox対策
+object,
+img,
+a:link,
+a:visited,
+a:active,
+a:hover
+{
+    outline: none;
+}
+
+
+img
+{
+    height: auto;
+
+    user-select: none;
+
+    user-drag: none;
+}
+
+ol,
+ul,
+li,
+dl,
+dt,
+dd
+{
+    margin: 0;
+    padding: 0;
+
+    list-style-type: none;
+}
+
+a,
+button,
+input
+{
+    border: 0;
+    outline: 0;
+}
+
+::selection
+{
+    color: #999;
+    background-color: #333;
+}

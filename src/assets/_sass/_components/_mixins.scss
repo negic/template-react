@@ -1,0 +1,96 @@
+
+// タップ時の色
+@mixin tap-highlight($color: rgba(0,0,0,0)) {
+    -webkit-tap-highlight-color: $color;
+    -moz-tap-highlight-color: $color;
+    tap-highlight-color: $color;
+}
+
+// 長押しで画像を保存させるかどうか
+@mixin touch-callout($properties: none) {
+    -webkit-touch-callout: $properties;
+    -moz-touch-callout: $properties;
+    touch-callout: $properties;
+}
+
+
+// animation
+@mixin animation($name, $duration, $repeat, $easing) {
+    -webkit-animation: $name $duration $repeat $easing;
+    -moz-animation: $name $duration $repeat $easing;
+    -o-animation: $name $duration $repeat $easing;
+    animation: $name $duration $repeat $easing;
+}
+
+
+// 呼び出す時には @include(色, 線分, 間隔);
+@mixin dotted($color:rgba(#000, 1.0), $stripe: 1, $spacing: 4) {
+    @include background-image(linear-gradient(left, color-stops($color, $color ($stripe / ($stripe + $spacing)) * 100%, transparent ($stripe / ($stripe+$spacing)) * 100%, transparent 100%)));
+    border: none;
+    background-size: ($stripe + $spacing) * 1px ($stripe + $spacing) * 1px;
+}
+
+
+// keyframe
+// 使い方
+// @include keyframes(borderAnim) {
+//     0% { width: 0px }
+//   100% { width: 100px; }
+// }
+@mixin keyframes($name) {
+    @-webkit-keyframes #{$name} {
+        @content;
+    }
+    @-moz-keyframes #{$name} {
+        @content;
+    }
+    @-ms-keyframes #{$name} {
+        @content;
+    }
+    @keyframes #{$name} {
+        @content;
+    }
+}
+
+
+
+@mixin textHidden() {
+    overflow: hidden;
+    text-indent: 100%;
+    white-space: nowrap;
+}
+
+@mixin imgSetting($src) {
+    @include textHidden;
+    display: block;
+    background: url($src) no-repeat;
+}
+
+@mixin imgBackground($src) {
+    $width: image-width($src);
+    $height: image-height($src);
+    @include imgSetting($src);
+    width: $width;
+    height: $height;
+}
+
+@mixin bgImage($src) {
+    $width: image-width($src);
+    $height: image-height($src);
+    display: block;
+    width: $width;
+    height: $height;
+    background: url($src) no-repeat;
+}
+
+
+@mixin centered($top: 0, $right: 0, $bottom: 0, $left: 0) {
+    position: absolute;
+    top: $top;
+    right: $right;
+    bottom: $bottom;
+    left: $left;
+    margin: auto;
+}
+
+
