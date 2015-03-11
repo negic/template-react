@@ -2,11 +2,11 @@ if RUBY_VERSION =~ /1.9/
   Encoding.default_external = Encoding::UTF_8
 end
 
-http_path       = "/"
-sass_dir        = "assets/_sass/"
-css_dir         = "assets/css/"
-images_dir      = "assets/img/"
-javascripts_dir = "assets/js/"
+http_path       = "src//"
+sass_dir        = "src/assets/_sass/"
+css_dir         = "src/assets/css/"
+images_dir      = "src/assets/img/"
+javascripts_dir = "src/assets/js/"
 
 
 # cssの主力形式
