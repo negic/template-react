@@ -63,7 +63,8 @@
 @mixin imgSetting($src) {
     @include textHidden;
     display: block;
-    background: url($src) no-repeat;
+    background-image: url($src);
+    background-repeat: no-repeat;
 }
 
 @mixin imgBackground($src) {
