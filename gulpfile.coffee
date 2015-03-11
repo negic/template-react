@@ -90,6 +90,8 @@ gulp.task 'compass', ->
         .pipe $.compass
             config_file: 'config.rb'
             sass: p.dev.sass
+            css: p.dev.css
+            image: p.dev.image
         .pipe $.autoprefixer('last 2 version')
         .pipe $.csscomb()
         .pipe gulp.dest(p.dev.css)
@@ -98,6 +100,12 @@ gulp.task 'cssmin', ->
     gulp.src [ p.dev.css + '/app.css' ]
         .pipe $.minifyCss()
         .pipe gulp.dest(p.prd.css)
+
+gulp.task 'cmq', ->
+    gulp.src [ "#{p.dev.css}/app.css" ]
+        .pipe $.combineMediaQueries
+            log: false
+        .pipe gulp.dest p.dev.css
 
 
 ### ============================================================================================
@@ -131,14 +139,21 @@ gulp.task 'deploy', ->
     runSequence 'ftp'
 
 gulp.task 'watch', ->
+
+    log = ->
+        console.log "\n------- watch start -------"
+
     gulp.watch p.dev.root + '/**/*.jade', (event) ->
+        log()
         gulp.run 'jade'
 
     gulp.watch [ p.dev.coffee + '/**/*.coffee', "!#{p.dev.coffee}/dev.coffee" ], (event) ->
+        log()
         runSequence 'coffee-concat', 'coffee'
 
     gulp.watch p.dev.sass + '/**/*.scss', (event) ->
-        gulp.run 'compass'
+        log()
+        runSequence 'compass', 'cmq'
 
 
 gulp.task 'r', [ 'release' ]
