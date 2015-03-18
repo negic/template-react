@@ -14,42 +14,12 @@
 }
 
 
-// animation
-@mixin animation($name, $duration, $repeat, $easing) {
-    -webkit-animation: $name $duration $repeat $easing;
-    -moz-animation: $name $duration $repeat $easing;
-    -o-animation: $name $duration $repeat $easing;
-    animation: $name $duration $repeat $easing;
-}
-
 
 // 呼び出す時には @include(色, 線分, 間隔);
 @mixin dotted($color:rgba(#000, 1.0), $stripe: 1, $spacing: 4) {
     @include background-image(linear-gradient(left, color-stops($color, $color ($stripe / ($stripe + $spacing)) * 100%, transparent ($stripe / ($stripe+$spacing)) * 100%, transparent 100%)));
     border: none;
     background-size: ($stripe + $spacing) * 1px ($stripe + $spacing) * 1px;
-}
-
-
-// keyframe
-// 使い方
-// @include keyframes(borderAnim) {
-//     0% { width: 0px }
-//   100% { width: 100px; }
-// }
-@mixin keyframes($name) {
-    @-webkit-keyframes #{$name} {
-        @content;
-    }
-    @-moz-keyframes #{$name} {
-        @content;
-    }
-    @-ms-keyframes #{$name} {
-        @content;
-    }
-    @keyframes #{$name} {
-        @content;
-    }
 }
 
 
@@ -95,3 +65,19 @@
 }
 
 
+@mixin ratioResponsive($num1, $num2) {
+    position: relative;
+    overflow: hidden;
+    padding-top: percentage($num2 / $num1);
+
+    .ratio-inner {
+        @include centered();
+        width: 100%;
+        height: 100%;
+    }
+}
+
+@mixin indent($num: 1) {
+    margin-left: #{$num}em;
+    text-indent: -#{$num}em;
+}
