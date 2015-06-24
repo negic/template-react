@@ -1,5 +1,5 @@
 
-{common, develop, production} = require './base.config.coffee'
+{common, develop, dest, release} = require './base.config.coffee'
 
 #android = require './android.config.coffee'
 #ios = require './ios.config.coffee'
@@ -38,6 +38,7 @@ getData = (envConfig, base = common) ->
 module.exports = exports =
     config:
         develop: develop
-        production: production
+        dest: dest
+        release: release
         common: common
         getData: getData

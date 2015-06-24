@@ -1,0 +1,83 @@
+
+// タップ時の色
+@mixin tap-highlight($color: rgba(0,0,0,0)) {
+    -webkit-tap-highlight-color: $color;
+    -moz-tap-highlight-color: $color;
+    tap-highlight-color: $color;
+}
+
+// 長押しで画像を保存させるかどうか
+@mixin touch-callout($properties: none) {
+    -webkit-touch-callout: $properties;
+    -moz-touch-callout: $properties;
+    touch-callout: $properties;
+}
+
+
+
+// 呼び出す時には @include(色, 線分, 間隔);
+@mixin dotted($color:rgba(#000, 1.0), $stripe: 1, $spacing: 4) {
+    @include background-image(linear-gradient(left, color-stops($color, $color ($stripe / ($stripe + $spacing)) * 100%, transparent ($stripe / ($stripe+$spacing)) * 100%, transparent 100%)));
+    border: none;
+    background-size: ($stripe + $spacing) * 1px ($stripe + $spacing) * 1px;
+}
+
+
+
+@mixin textHidden() {
+    overflow: hidden;
+    text-indent: 100%;
+    white-space: nowrap;
+}
+
+@mixin imgSetting($src) {
+    @include textHidden;
+    display: block;
+    background-image: url($src);
+    background-repeat: no-repeat;
+}
+
+@mixin imgBackground($src) {
+    $width: image-width($src);
+    $height: image-height($src);
+    @include imgSetting($src);
+    width: $width;
+    height: $height;
+}
+
+@mixin bgImage($src) {
+    $width: image-width($src);
+    $height: image-height($src);
+    display: block;
+    width: $width;
+    height: $height;
+    background: url($src) no-repeat;
+}
+
+
+@mixin centered($top: 0, $right: 0, $bottom: 0, $left: 0) {
+    position: absolute;
+    top: $top;
+    right: $right;
+    bottom: $bottom;
+    left: $left;
+    margin: auto;
+}
+
+
+@mixin ratioResponsive($num1: 16, $num2: 9) {
+    position: relative;
+    overflow: hidden;
+    padding-top: percentage($num2 / $num1);
+
+    .ratio-inner {
+        @include centered();
+        width: 100%;
+        height: 100%;
+    }
+}
+
+@mixin indent($num: 1) {
+    margin-left: #{$num}em;
+    text-indent: -#{$num}em;
+}

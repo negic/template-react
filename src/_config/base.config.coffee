@@ -37,20 +37,26 @@ module.exports = exports =
     develop:
         path:
             root:   './src'
-            sass:   './src/assets/_sass'
-            coffee: './src/assets/_coffee'
-            css:    './src/assets/css'
-            js:     './src/assets/js'
-            image:  './src/assets/img'
-
+            jade:   './src/jade'
+            sass:   './src/sass'
+            coffee: './src/coffee'
+            css:    './src/css'
+            js:     './src/js'
+            image:  './src/img'
         debug: true
 
-
-    production:
+    dest:
         path:
-            root:   './_dist'
-            css:    './_dist/assets/css'
-            js:     './_dist/assets/js'
-            image:  './_dist/assets/img'
+            root:   './dest'
+            css:    './dest/assets/css'
+            js:     './dest/assets/js'
+            image:  './dest/assets/img'
+        debug: true
 
+    release:
+        path:
+            root:   './release'
+            css:    './release/assets/css'
+            js:     './release/assets/js'
+            image:  './release/assets/img'
         debug: false
