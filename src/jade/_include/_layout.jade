@@ -1,10 +1,15 @@
 block variable
 
+- var bodyClass = [];
+- for (i = 0, l = page.length; i < l; i++) {
+-     bodyClass.push('page-' + page[i]);
+- }
+
 doctype
 html.no-js(lang="#{lang}")
     include _meta
 
-    body(class="page-#{page}")
+    body(class="#{bodyClass.join(' ')}")
 
         #wrapper
             include _header
