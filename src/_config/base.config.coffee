@@ -42,7 +42,7 @@ module.exports = exports =
             coffee: './src/coffee'
             css:    './src/css'
             js:     './src/js'
-            image:  './src/img'
+            img:  './src/img'
         debug: true
 
     dest:
@@ -50,7 +50,7 @@ module.exports = exports =
             root:   './dest'
             css:    './dest/assets/css'
             js:     './dest/assets/js'
-            image:  './dest/assets/img'
+            img:  './dest/assets/img'
         debug: true
 
     release:
@@ -58,5 +58,5 @@ module.exports = exports =
             root:   './release'
             css:    './release/assets/css'
             js:     './release/assets/js'
-            image:  './release/assets/img'
+            img:  './release/assets/img'
         debug: false

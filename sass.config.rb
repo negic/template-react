@@ -3,10 +3,10 @@ if RUBY_VERSION =~ /1.9/
 end
 
 http_path       = "src//"
-sass_dir        = "src/assets/sass/"
-css_dir         = "src/assets/css/"
-images_dir      = "src/assets/img/"
-javascripts_dir = "src/assets/js/"
+sass_dir        = "src/sass/"
+css_dir         = "src/css/"
+images_dir      = "src/img/"
+javascripts_dir = "src/js/"
 
 
 # cssの主力形式

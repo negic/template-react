@@ -16,19 +16,19 @@ head
     meta(property="og:image", content="#{og.image}")
     meta(property="og:type", content="#{og.type}")
 
-    meta(name="mobile-web-app-capable", content="yes")
-    meta(name="apple-mobile-web-app-capable", content="yes")
-    meta(name="apple-mobile-web-app-status-bar-style", content="black")
-    meta(name="apple-mobile-web-app-title", content="#{BASE_URL}")
-    meta(name="msapplication-TileImage", content="images/touch/ms-touch-icon-144x144-precomposed.png")
-    meta(name="msapplication-TileColor", content="#3372DF")
+    //- meta(name="mobile-web-app-capable", content="yes")
+    //- meta(name="apple-mobile-web-app-capable", content="yes")
+    //- meta(name="apple-mobile-web-app-status-bar-style", content="black")
+    //- meta(name="apple-mobile-web-app-title", content="#{BASE_URL}")
+    //- meta(name="msapplication-TileImage", content="#{rel}/assets/img/touch/ms-touch-icon-144x144-precomposed.png")
+    //- meta(name="msapplication-TileColor", content="#3372DF")
+    //- link(rel="icon", href="#{rel}/assets/img/touch-icon-196x196.png", sizes="192x192")
+    //- link(rel="apple-touch-icon-precomposed", href="#{rel}/assets/img/apple-touch-icon-precomposed.png")
 
-    link(rel="icon", href="assets/img/touch-icon-196x196.png", sizes="192x192")
-    link(rel="apple-touch-icon-precomposed", href="apple-touch-icon-precomposed.png")
-    link(rel="shortcut icon", href="assets/img/apple-touch-icon.png")
+    link(rel="shortcut icon", href="#{rel}/assets/img/favicon.png")
 
     link(rel="canonical", href="#{BASE_URL}")
 
-    link(rel="stylesheet", href="#{rel_path}assets/css/app.css")
+    link(rel="stylesheet", href="#{path}/assets/css/app.css")
 
-    //- script(src="#{rel_path}assets/js/lib/modernizr-2.7.1.min.js")
+    //- script(src="#{path}/assets/js/lib/modernizr-2.7.1.min.js")
