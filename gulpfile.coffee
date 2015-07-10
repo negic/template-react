@@ -42,11 +42,11 @@ gulp.task 'minify-html', ->
 ### ============================================================================================
     - JS系記述
 ============================================================================================ ###
-gulp.task 'coffee', ->
-    gulp.src "#{p.d.coffee}/**/*.coffee"
-        .pipe $.plumber()
-        .pipe $.coffee()
-        .pipe gulp.dest p.d.js
+# gulp.task 'coffee', ->
+#     gulp.src "#{p.d.coffee}/**/*.coffee"
+#         .pipe $.plumber()
+#         .pipe $.coffee()
+#         .pipe gulp.dest p.d.js
 
 gulp.task 'webpack', ->
     gulp.src ''
@@ -134,9 +134,9 @@ gulp.task 'watch', ->
         log()
         gulp.run 'jade-all-compile'
 
-    gulp.watch [ "#{p.d.coffee}/**/*.coffee", "#{p.d.jade}/_template/**/*.html" ], (event) ->
+    gulp.watch [ "#{p.d.coffee}/**/*.coffee", "#{p.d.jsx}/**/*.jsx", "#{p.d.jade}/_template/**/*.html" ], (event) ->
         log()
-        runSequence 'coffee', 'webpack'
+        runSequence 'webpack'
 
     gulp.watch "#{p.d.sass}/**/*.scss", (event) ->
         log()

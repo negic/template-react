@@ -81,3 +81,17 @@
     margin-left: #{$num}em;
     text-indent: -#{$num}em;
 }
+
+
+@mixin inner-resize() {
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+@mixin outer-resize() {
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+

@@ -40,9 +40,10 @@ module.exports = exports =
             jade:   './src/jade'
             sass:   './src/sass'
             coffee: './src/coffee'
+            jsx:    './src/jsx'
             css:    './src/css'
             js:     './src/js'
-            img:  './src/img'
+            img:    './src/img'
         debug: true
 
     dest:
