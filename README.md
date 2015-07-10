@@ -1,5 +1,1 @@
-# template-html
-jade  
-sass  
-coffeescript  
-gulp  
+# template-react
