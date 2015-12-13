@@ -10,17 +10,17 @@ body
     // font: 15px/1.6 'Hiragino Mincho ProN', serif
 
     -webkit-font-smoothing: antialiased;
+    // position: relative;
+    // overflow: hidden;
+    // visibility: hidden;
 }
 
-a
-{
+a {
     text-decoration: none;
-
     color: #00f;
 
-    &:hover
-    {
-        text-decoration: underline;
+    &:hover {
+        text-decoration: none;
     }
 }
 
@@ -47,16 +47,10 @@ img
     user-drag: none;
 }
 
-ol,
-ul,
-li,
-dl,
-dt,
-dd
-{
+h1,h2,h3,h4,h5,h6,p,
+ol,ul,li,dl,dt,dd{
     margin: 0;
     padding: 0;
-
     list-style-type: none;
 }
 

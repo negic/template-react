@@ -1,13 +1,12 @@
 var React = require('react');
 var Router = require('react-router');
-var {State, Route, DefaultRoute, NotFoundRoute, RouteHandler, Link} = Router;
+var {Link} = Router;
 var _ = require('underscore');
 
 var MenuData = require('../../_config/data').menu;
 
 
 class Header extends React.Component {
-
 
     constructor(props) {
         super(props)

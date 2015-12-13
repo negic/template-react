@@ -1,0 +1,17 @@
+
+block variable
+
+- var bodyClass = [];
+- for (i = 0, l = page.length; i < l; i++) {
+-     bodyClass.push('page-' + page[i]);
+- }
+
+doctype
+html.no-js(lang="#{constant.LANG}")
+    include _meta
+
+    body(class="#{bodyClass.join(' ')}")
+        #wrapper
+            block content
+
+        include _script

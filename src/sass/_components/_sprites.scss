@@ -1,31 +1,20 @@
-/* ==========================================================================
-    Sprite
-========================================================================== */
-$sprites: sprite-map("common/sprite/*.png", $spacing: 20px);
 
-%base-sprite {
-    background: sprite-url($sprites) no-repeat;
-    @include background-size(ceil(image-width(sprite-path($sprites)) / 2), auto);
-    overflow: hidden;
-}
-
-@mixin sprite-background($name, $width: "false", $height: "false", $size: "true") {
-    @extend %base-sprite;
-
-    @if $size == "true" {
-        @if $width == "false" {
-            width: image-width(sprite-file($sprites, $name)) / 2;
-        } @else {
-            width: $width;
-        }
-
-        @if $height == "false" {
-            height: image-height(sprite-file($sprites, $name)) / 2;
-        } @else {
-            height: $height;
-        }
-    }
+@mixin sprite-background($name, $sprites, $sprites-img) {
+    //   height: image-height(sprite-file($sprites, $name)) / 2;
+    //   width: image-width(sprite-file($sprites, $name)) / 2;
 
     $ypos: round(nth(sprite-position($sprites, $name), 2) / 2);
+    display: block;
+    background-image: $sprites-img;
     background-position: 0 $ypos;
+    background-size: ceil(image-width(sprite-path($sprites)) / 2) ceil(image-height(sprite-path($sprites)) / 2);
+    background-repeat: no-repeat;
 }
+
+
+// 複数作る場合はココに記述していく
+$ico-sprites: sprite-map("common/sprites/*.png", $spacing: 6px);
+$ico-sprites-image: sprite-url($ico-sprites);
+
+// $btn-sprites: sprite-map("common/button/*.png", $spacing: 4px);
+// $btn-sprites-image: sprite-url($btn-sprites);

@@ -1,0 +1,47 @@
+
+.logo01 {
+    background-image: url(../img/common/logo01.png);
+    background-repeat: no-repeat;
+    width: 324px;
+    height: 404px;
+    display: block;
+    @include textHidden();
+}
+
+
+.logo02 {
+    background-image: url(../img/common/logo02.png);
+    background-repeat: no-repeat;
+    width: 65px;
+    height: 33px;
+    display: block;
+    @include textHidden();
+}
+
+.logo03 {
+    background-image: url(../img/common/logo03.png);
+    background-repeat: no-repeat;
+    width: 199px;
+    height: 23px;
+    display: block;
+    @include textHidden();
+}
+
+.tit_ko {
+    background-image: url(../img/top/tit_ko.png);
+    background-repeat: no-repeat;
+    width: 390px;
+    height: 58px;
+}
+.tit_hk {
+    background-image: url(../img/top/tit_hk.png);
+    background-repeat: no-repeat;
+    width: 442px;
+    height: 56px;
+}
+.tit_tw {
+    background-image: url(../img/top/tit_tw.png);
+    background-repeat: no-repeat;
+    width: 222px;
+    height: 60px;
+}

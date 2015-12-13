@@ -1,0 +1,41 @@
+
+head
+    meta(charset="#{constant.CHARSET}")
+
+    title= constant.BASE_TITLE
+
+    meta(name="description" content="#{constant.BASE_DESCRIPTION}")
+    meta(name="keywords" content="#{constant.BASE_KEYWORD}")
+
+    meta(name="viewport" content="width=1100, initial-scale=1")
+    meta(http-equiv="X-UA-Compatible" content="IE=edge")
+    meta(name="mobile-web-app-capable" content="yes")
+
+    meta(property="og:title" content="#{constant.OG.title}")
+    meta(property="og:site_name" content="#{constant.OG.site_name}")
+    meta(property="og:description" content="#{constant.OG.description}")
+    meta(property="og:url" content="#{constant.OG.url}")
+    meta(property="og:image" content="#{constant.OG.image}")
+    meta(property="og:type" content="#{constant.OG.type}")
+
+    //- meta(name="twitter:card" content="summary_large_image")
+    //- meta(name="twitter:title" content="#{constant.OG.title}")
+    //- meta(name="twitter:description" content="#{constant.OG.description}")
+    //- meta(name="twitter:image:src" content="#{constant.OG.image}")
+    //- meta(name="apple-mobile-web-app-title" content="#{BASE_TITLE}")
+
+    link(rel="apple-touch-icon" href="#{path}/assets/img/apple-touch-icon.png")
+    link(rel="apple-touch-icon" href="#{path}/assets/img/apple-touch-icon-57x57.png"   sizes="57x57")
+    link(rel="apple-touch-icon" href="#{path}/assets/img/apple-touch-icon-72x72.png"   sizes="72x72")
+    link(rel="apple-touch-icon" href="#{path}/assets/img/apple-touch-icon-76x76.png"   sizes="76x76")
+    link(rel="apple-touch-icon" href="#{path}/assets/img/apple-touch-icon-114x114.png" sizes="114x114")
+    link(rel="apple-touch-icon" href="#{path}/assets/img/apple-touch-icon-120x120.png" sizes="120x120")
+    link(rel="apple-touch-icon" href="#{path}/assets/img/apple-touch-icon-144x144.png" sizes="144x144")
+    link(rel="apple-touch-icon" href="#{path}/assets/img/apple-touch-icon-152x152.png" sizes="152x152")
+    link(rel="apple-touch-icon" href="#{path}/assets/img/apple-touch-icon-180x180.png" sizes="180x180")
+    link(rel="shortcut icon"    href="#{path}/assets/img/favicon.png")
+
+    link(rel="canonical" href="#{constant.BASE_URL}")
+    link(rel="stylesheet" href="#{path}/assets/css/app.css")
+
+    //- script(src="#{path}/assets/js/lib/modernizr-2.7.1.min.js")

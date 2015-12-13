@@ -1,12 +1,12 @@
 .modal-layer {
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
-    z-index: 110;
+    z-index: 9;
     overflow: hidden;
     width: 100%;
     height: 100%;
-    background: rgba(#fff, 0);
+    background-color: rgba(#000, 0.8);
     display: none;
 
     .modal-back {
@@ -19,16 +19,30 @@
     }
 
     .modal-inner {
-        @include centered();
-        width: 650px;
-        height: 650px;
+        position: absolute;
+        top: 0;
+        left: 50%;
+        width: 1110px;
+        height: 484px;
+        margin-left: -555px;
         background-color: #fff;
         box-shadow: 0 0 1px #7d7d7d;
         z-index: 2;
         transition: all 200ms ease;
         transform: scale(0);
         opacity: 0;
+
+        border: 10px solid;
+
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: 50% 50%;
     }
+
+    &.type1 .modal-inner { background-image: url(../img/modal01.jpg); border-color: #73c835; }
+    &.type2 .modal-inner { background-image: url(../img/modal02.jpg); border-color: #73c835; }
+    &.type3 .modal-inner { background-image: url(../img/modal03.jpg); border-color: #73c835; }
+    &.type4 .modal-inner { background-image: url(../img/modal04.jpg); border-color: #73c835; }
 
     .btn-close01 {
         position: absolute;
@@ -37,7 +51,7 @@
         margin-left: -13px;
     }
 
-    &.is-open {
+    &.is-show {
 
         .modal-inner {
             opacity: 1;
